@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-<img src="assets/img2.PNG" alt="page img" style="display: block; margin: auto; border-radius: 50%;">
+<img src="assets/img2.PN G" alt="page img" style="display: block; margin: auto; border-radius: 50%;">
 </p>
 
 ## Update Logs
@@ -37,7 +37,7 @@ QLoRA를 사용해 RTX3060ti 8GB 1대로 학습을 진행했습니다. 학습 �
 
 사용자가 입력하는 부분에 마스킹 처리를 했습니다.
 
-![Train Loss Graph](./polyglot-ko-medical-chat-5.8b_loss.png)
+![Train Loss Graph](./assets/polyglot-ko-medical-chat-5.8b_loss.png)
 
 ## 데이터셋 제작과정
 
