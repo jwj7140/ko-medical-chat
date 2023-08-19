@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-<img src="assets/img.png" alt="page img" style="width: 300px; height:300px; display: block; margin: auto; border-radius: 50%;">
+<img src="assets/img.png" alt="page img" style="display: block; margin: auto; border-radius: 50%;">
 </p>
 
 ## Update Logs
