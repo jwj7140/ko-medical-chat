@@ -50,12 +50,13 @@ def generate(
     temperature: float,
     top_p: float,
     top_k: int,
+    repetition_penalty: float
 ) -> Iterator[list[tuple[str, str]]]:
     if max_new_tokens > MAX_MAX_NEW_TOKENS:
         raise ValueError
 
     history = history_with_input[:-1]
-    generator = run(message, history, system_prompt, max_new_tokens, temperature, top_p, top_k)
+    generator = run(message, history, system_prompt, max_new_tokens, temperature, top_p, top_k, repetition_penalty)
     try:
         first_response = next(generator)
         yield history + [(message, first_response)]
@@ -66,7 +67,7 @@ def generate(
 
 
 def process_example(message: str) -> tuple[str, list[tuple[str, str]]]:
-    generator = generate(message, [], DEFAULT_SYSTEM_PROMPT, 1024, 1, 0.95, 50)
+    generator = generate(message, [], DEFAULT_SYSTEM_PROMPT, 1024, 1, 0.95, 50, 1.2)
     for x in generator:
         pass
     return '', x
@@ -133,6 +134,13 @@ with gr.Blocks(css='style.css') as demo:
             step=1,
             value=50,
         )
+        repetition_penalty = gr.Slider(
+            label='Repetition_Penalty',
+            minimum=1,
+            maximum=2,
+            step=0.1,
+            value=1.2,
+        )
 
     gr.Examples(
         examples=[
@@ -173,6 +181,7 @@ with gr.Blocks(css='style.css') as demo:
             temperature,
             top_p,
             top_k,
+            repetition_penalty
         ],
         outputs=chatbot,
         api_name=False,

@@ -58,7 +58,8 @@ def run(message: str,
         max_new_tokens: int = 1024,
         temperature: float = 0.8,
         top_p: float = 0.95,
-        top_k: int = 50) -> Iterator[str]:
+        top_k: int = 50,
+        repetition_penalty: float = 1.2) -> Iterator[str]:
     prompt = get_prompt(message, chat_history, system_prompt)
     inputs = tokenizer([prompt], return_tensors='pt', add_special_tokens=False, return_token_type_ids=False).to('cuda')
 
@@ -78,6 +79,7 @@ def run(message: str,
         top_p=top_p,
         top_k=top_k,
         temperature=temperature,
+        repetition_penalty=repetition_penalty,
         num_beams=1,
         stopping_criteria=stopping_criteria
     )
