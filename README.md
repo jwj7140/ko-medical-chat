@@ -17,8 +17,16 @@
 ```
 python app.py
 ```
-
 webUI를 통해 모델을 사용할 수 있습니다.
+
+## 프롬프트
+
+```
+아래는 매우 전문적인 의사와 환자의 진료 기록이다.
+
+환자: {question}
+의사:
+```
 
 ## polyglot-ko-medical-chat-5.8b
 
