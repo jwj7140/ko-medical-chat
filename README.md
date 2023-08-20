@@ -37,6 +37,7 @@ webUI를 통해 모델을 사용할 수 있습니다.
 ### 학습
 
 QLoRA를 사용해 RTX3060ti 8GB 1대로 학습을 진행했습니다. 학습 코드는 [polyglot_medical_learn.ipynb](https://github.com/jwj7140/ko-medical-chat/blob/main/polyglot_medical_learn.ipynb)를 참고하세요
+
 기반모델: [polyglot-ko-medical-5.8b](https://huggingface.co/squarelike/polyglot-ko-medical-5.8b)
 - Epoch: 5
 - learning-rate: 3e-4
